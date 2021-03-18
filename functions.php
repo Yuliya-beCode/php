@@ -28,6 +28,42 @@ echo date("Y");
 $today = date("F j, Y, g:i a");
 
 echo $today;
+?>
+
+<hr>
+
+<p style="color: blue;">Create a "Sum" function that takes 2 numbers and returns their sum.</p>
+
+<?php
+
+$a = 1;
+$b = 2;
+echo $a + $b;
+?>
+
+<hr>
+
+
+<p style="color: blue;">Improve that function so that it checks whether the argument is indeed a Number. If not, it should display : "Error: argument is not a number."</p>
+
+<?php
+
+$a = 1;
+$b = 2;
+
+$tests = array(
+    $a,
+    $b
+);
+
+
+foreach ($tests as $element) {
+    if (is_numeric($element)) {
+        echo var_export($element, true) . " is numeric";
+    } else {
+        echo var_export($element, true) . "Error: argument is not a number";
+    }
+}
 
 
 ?>
