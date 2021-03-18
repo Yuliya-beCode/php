@@ -99,17 +99,48 @@ for ($amount_of_lines = 1; $amount_of_lines <= 100; $amount_of_lines++) {
 
 <h1>Exercises</h1>
 
-<p style="color: red;">Write a script that prints the numbers from 1 to 120 using  while
+<p style="color: red;">Write a script that prints the numbers from 1 to 120 using while
 </p>
 <?php
 
 $n = 1;
 
-while ($n <= 120)
-{
+while ($n <= 120) {
     echo $n++;
-    
 }
 ?>
 
 <hr>
+<p style="color: red;">Write a script that prints the numbers from 1 to 120 using for
+</p>
+<?php
+
+for ($n = 1; $n <= 120; $n++) {
+    echo $n;
+}
+?>
+
+<hr>
+
+<p style="color: red;">Create an array containing at least 10 countries. Then, generate the html that will render a select box inside an html form (see mockup below). Of course, a loop will be useful...
+</p>
+<?php
+
+$pays = array('BE' => 'Belgique', 'BZ' => 'Belize', 'BO' => '	The Plurinational State of Bolivia', 'AT' => 'Austria', 'EE' => 'Estonia', 'FI' => 'Finland', 'FR' => 'France', 'HT' => 'The Republic of Haiti', 'HN' => 'Hinduras', 'IS' => 'Island');
+
+?>
+
+<hr>
+<form type="get">
+    <select name='pays'>
+
+        <?php
+
+        foreach ($pays as $iso => $pay) {
+            echo "<option value='$iso'>$pay</option>";
+        }
+
+
+        ?>
+    </select>
+</form>
