@@ -1,10 +1,16 @@
 <p style="color: blue;">Use a function that capitalizes the first letter of the provided argument. Example: should return "émile""Émile"
 </p>
 <?php
-
+if (!function_exists('mb_ucfirst') && function_exists('mb_substr')) {
+    function mb_ucfirst($string)
+    {
+        $string = mb_strtoupper(mb_substr($string, 0, 1)) . mb_substr($string, 1);
+        return $string;
+    }
+}
 $name = "émile";
 
-$name = ucfirst($name);
+$name = mb_ucfirst($name);
 
 echo $name;
 ?>
@@ -65,6 +71,38 @@ foreach ($tests as $element) {
     }
 }
 
+
+?>
+
+<hr>
+
+<p style="color: blue;">Create a function that takes as argument a string of characters and returns an acronym made of the initials of each word.
+    Example: "In code we trust!" should return: ICWT).</p>
+<?php
+$s = 'In code we trust!';
+$s = strtoupper($s);
+echo preg_replace('/\b(\w)|./', '$1', $s);
+
+?>
+
+<hr>
+
+
+<p style="color: blue;">Create a function that replaces the letters "a" and "e" with "æ". Example: "caecotrophie", "chaenichthys","microsphaera", "sphaerotheca" should respectively return "cæcotrophie", "chænichthys","microsphæra", "sphærotheca".</p>
+<?php
+$letters = array (
+    'caecotrophie',
+    'chaenichthys',
+    'microsphaera',
+    'sphaerotheca'
+    );
+?>
+
+<hr>
+
+
+<p style="color: blue;"></p>
+<?php
 
 ?>
 
