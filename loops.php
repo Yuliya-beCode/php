@@ -51,12 +51,11 @@ $pronouns = array('I', 'You', 'He/She', 'We', 'You', 'They');
 
 
 foreach ($pronouns as $key => $value) {
-    $pronouns[0] = 'I code';
-    $pronouns[1] = 'You code';
-    $pronouns[2] = 'He/She codes';
-    $pronouns[3] = 'We code';
-    $pronouns[4] = 'You code';
-    $pronouns[5] = 'They code';
+    if ($pronouns[$key] == 'He/She') {
+        array_push($pronouns, $pronouns[$key], 'codes');
+    } else {
+        array_push($pronouns, $pronouns[$key],'code');
+    }
 }
 
 print_r($pronouns)

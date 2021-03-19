@@ -90,19 +90,22 @@ echo preg_replace('/\b(\w)|./', '$1', $s);
 
 <p style="color: blue;">Create a function that replaces the letters "a" and "e" with "æ". Example: "caecotrophie", "chaenichthys","microsphaera", "sphaerotheca" should respectively return "cæcotrophie", "chænichthys","microsphæra", "sphærotheca".</p>
 <?php
-$letters = array (
-    'caecotrophie',
-    'chaenichthys',
-    'microsphaera',
-    'sphaerotheca'
-    );
+$words = ['caecotrophie', 'chaenichthys', 'microsphaera', 'sphaerotheca'];
+
+$words = str_replace('ae', 'æ', $words);
+var_dump($words);
+
 ?>
 
 <hr>
 
 
-<p style="color: blue;"></p>
+<p style="color: blue;">Create the opposite function, which replaces "æ" by "ae" in : cæcotrophie, chænichthys, microsphæra, sphærotheca</p>
 <?php
+
+$words = str_replace('æ', 'ae', $words);
+var_dump($words);
+
 
 ?>
 
